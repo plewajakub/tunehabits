@@ -13,3 +13,46 @@
     background-color: #191414;
 }
 
+.container {
+    max-width: 800px;
+    background-color: #191414;
+    padding: 20px;
+    margin: auto;
+    font-family: Gotham, sans-serif;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0 10px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.tab.active {
+    border-bottom: 3px solid #1DB954;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.artists,
+.albums,
+.tracks {
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}

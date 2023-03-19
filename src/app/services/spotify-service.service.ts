@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, from } from 'rxjs';
 import SpotifyWebApi from 'spotify-web-api-js';
 import { map } from 'rxjs/operators';
+import { forkJoin } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -34,10 +35,10 @@ export class SpotifyService {
       );
   }
 
-  getTopArtists(): Observable<any> {
-    return from(['short_term', 'medium_term', 'long_term']).pipe(
-      map((term: string) => this.spotifyApi.getMyTopArtists({ time_range: term, limit: 3 })),
-      map((result: any) => result.items),
-    );
+   getUserTopArtists(): Observable<any[]> {
+    const durationTerms = ['short_term', 'medium_term', 'long_term'];
+    const observables = durationTerms.map(term => this.spotifyApi.getMyTopArtists({ limit: 9, time_range: term }));
+    return forkJoin(observables);
   }
 }
+

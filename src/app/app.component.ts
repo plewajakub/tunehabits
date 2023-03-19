@@ -1,17 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SpotifyService } from './services/spotify-service.service';
-import { fadeInSlideRightAnimation } from './components/animations';
+import { fadeInSlideRightAnimation, fadeInSlideLeftAnimation } from './components/animations';
+import { TopThingsComponentComponent } from './components/top-things-component/top-things-component.component';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  animations : [fadeInSlideRightAnimation]
+  animations : [fadeInSlideRightAnimation, fadeInSlideLeftAnimation]
 })
 export class AppComponent implements OnInit{
+  @ViewChild('topThings', {static: true}) topThings!: TopThingsComponentComponent
   tracks$!: Observable<any[]>;
+
+  term = 0;
+  mode = "artists"
   token!: string | null
   constructor(private spotifyService: SpotifyService) {}
   login(): void {
@@ -22,6 +27,11 @@ export class AppComponent implements OnInit{
       } else {
         this.spotifyService.login();
       }
+  }
+
+  handleDurationSwitch(term: number): void {
+    this.term = term;
+    this.topThings.render();
   }
 
   getTokenFromUrl(): string | null {
@@ -40,6 +50,5 @@ export class AppComponent implements OnInit{
       this.spotifyService.setAccessToken(this.token);
       this.tracks$ = this.spotifyService.getRecentlyPlayed();
     }
-    console.log(localStorage)
   }
 }

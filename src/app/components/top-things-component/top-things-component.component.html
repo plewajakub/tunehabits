@@ -1,1 +1,6 @@
-<p>top-things-component works!</p>
+<div class="grid-container">
+    <div *ngFor="let thing of topThingsData" class="grid-item">
+        <img [src]="thing.images[0].url" alt="{{ thing.name }}" class="grid-item-image">
+        <div class="grid-item-caption">{{ thing.name }}</div>
+    </div>
+</div>

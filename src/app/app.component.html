@@ -2,3 +2,21 @@
 <div [@fadeInSlideRightComponent]>
     <app-last-tracks-component [tracks$]="tracks$"></app-last-tracks-component>
 </div>
+<div [@fadeInSlideLeftComponent]>
+<div class="tabs top-tabs">
+    <button class="tab" (click)="mode = 'artists'" [class.active]="mode === 'artists'">Artists</button>
+    <button class="tab" (click)="mode = 'albums'" [class.active]="mode === 'albums'">Albums</button>
+    <button class="tab" (click)="mode = 'songs'" [class.active]="mode === 'songs'">Tracks</button>
+</div>
+
+<app-top-things-component #topThings [mode]="mode" [term]="term"></app-top-things-component>
+
+<div class="tabs bottom-tabs">
+    <button class="tab" (click)="handleDurationSwitch(0)" [class.active]="term === 0">30
+        Days</button>
+    <button class="tab" (click)="handleDurationSwitch(1)" [class.active]="term === 1">6
+        Months</button>
+    <button class="tab" (click)="handleDurationSwitch(2)" [class.active]="term === 2">All
+        Time</button>
+</div>
+</div>
