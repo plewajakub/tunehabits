@@ -1,2 +1,4 @@
 <button *ngIf="!token" class="spotify-login-button" (click)="login()">Log in with Spotify</button>
-<app-last-tracks-component [tracks$]="tracks$"></app-last-tracks-component>
+<div [@fadeInSlideRightComponent]>
+    <app-last-tracks-component [tracks$]="tracks$"></app-last-tracks-component>
+</div>

@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SpotifyService } from './services/spotify-service.service'
+import { SpotifyService } from './services/spotify-service.service';
+import { fadeInSlideRightAnimation } from './components/animations';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations : [fadeInSlideRightAnimation]
 })
 export class AppComponent implements OnInit{
   tracks$!: Observable<any[]>;
@@ -16,7 +19,6 @@ export class AppComponent implements OnInit{
       if (this.token) {
         this.spotifyService.setAccessToken(this.token);
         this.tracks$ = this.spotifyService.getRecentlyPlayed();
-        localStorage.setItem('spotify_token', this.token);
       } else {
         this.spotifyService.login();
       }
@@ -33,7 +35,7 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.token = localStorage.getItem('spotify_token');
+    this.token = this.getTokenFromUrl();
     if(this.token) {
       this.spotifyService.setAccessToken(this.token);
       this.tracks$ = this.spotifyService.getRecentlyPlayed();

@@ -12,3 +12,7 @@
 .spotify-login-button:hover {
     background-color: #191414;
 }
+
+body {
+    background-color: #282828;
+}
