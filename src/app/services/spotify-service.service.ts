@@ -14,7 +14,7 @@ export class SpotifyService {
   }
 
   login(): void {
-    const scopes = ['user-read-recently-played'];
+    const scopes = ['user-read-recently-played', 'user-top-read'];
     const clientId = '3062dd999226449289bb4f0963b37e1a';
     const redirectUrl = 'http://localhost:4200/';
 
@@ -34,4 +34,10 @@ export class SpotifyService {
       );
   }
 
+  getTopArtists(): Observable<any> {
+    return from(['short_term', 'medium_term', 'long_term']).pipe(
+      map((term: string) => this.spotifyApi.getMyTopArtists({ time_range: term, limit: 3 })),
+      map((result: any) => result.items),
+    );
+  }
 }
