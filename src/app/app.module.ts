@@ -5,18 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LastTracksComponentComponent } from './components/last-tracks-component/last-tracks-component.component';
 import { TopThingsComponentComponent } from './components/top-things-component/top-things-component.component';
+import { TitleComponentComponent } from './components/title-component/title-component.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LastTracksComponentComponent,
-    TopThingsComponentComponent
+    TopThingsComponentComponent,
+    TitleComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

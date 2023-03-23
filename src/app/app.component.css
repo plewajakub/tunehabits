@@ -35,7 +35,6 @@
     font-size: 20px;
     margin: 0 10px;
     padding: 10px;
-    transition: all 0.3s ease;
 }
 
 .tab.active {

@@ -31,7 +31,6 @@ export class AppComponent implements OnInit{
 
   handleDurationSwitch(term: number): void {
     this.term = term;
-    this.topThings.render();
   }
 
   getTokenFromUrl(): string | null {

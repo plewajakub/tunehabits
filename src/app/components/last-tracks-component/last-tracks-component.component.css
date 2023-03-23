@@ -3,6 +3,7 @@
     color: #b3b3b3;
     font-weight: 600;
     font-size: 28px;
+    margin-top: 0;
 }
 
 .last-tracks-container {
@@ -12,6 +13,7 @@
     padding: 20px;
     text-align: center;
     background-color: #191414;
+    box-sizing: border-box;
 }
 
 .last-tracks-container a {
@@ -103,6 +105,11 @@
     padding: 10px;
 }
 
+.fa-play {
+    font-size: 16px;
+    /* Decreased font size */
+    color: #1db954;
+}
 .last-track-play a:hover {
     color: #fff;
     background-color: #1db954;
@@ -110,8 +117,6 @@
     border-color: #fff;
 }
 
-.fa-play {
-    font-size: 16px;
-    /* Decreased font size */
-    color: #1db954;
+.last-track-play a:hover .fa-play {
+    color: #fff;
 }

@@ -1,0 +1,38 @@
+
+.title-box {
+    font-family: Gotham, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 800px;
+    margin: 0 auto;
+    background-color: #191414;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: white
+}
+
+.subtitle {
+    font-size: 24px;
+    font-weight: normal;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+}

@@ -9,9 +9,9 @@ import { forkJoin } from 'rxjs';
 })
 export class SpotifyService {
   private spotifyApi: SpotifyWebApi.SpotifyWebApiJs;
-
   constructor() {
     this.spotifyApi = new SpotifyWebApi();
+
   }
 
   login(): void {
@@ -40,5 +40,13 @@ export class SpotifyService {
     const observables = durationTerms.map(term => this.spotifyApi.getMyTopArtists({ limit: 9, time_range: term }));
     return forkJoin(observables);
   }
+
+
+  getUserTopTracks(): Observable<any> {
+    const durationTerms = ['short_term', 'medium_term', 'long_term'];
+    const observables = durationTerms.map(term => this.spotifyApi.getMyTopTracks({ limit: 9, time_range: term }));
+    return forkJoin(observables);
+  }
+
 }
 
