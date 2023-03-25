@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ChartModule } from 'primeng/chart';
+import Chart from 'chart.js/auto';
 
 @Component({
   selector: 'app-chart',
@@ -7,8 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChartComponent implements OnInit {
 
-  data = {};
-  options = {};
+  data = {
+      datasets: [{
+        data: [20, 10],
+      }],
+      labels: ['a', 'b']
+  }
+
+  options = {
+    plugins: {
+        title: {
+            display: true,
+            text: 'Custom Chart Title'
+        }
+    }
+  };
 
 
   constructor() { }
