@@ -1,15 +1,27 @@
 <app-title-component></app-title-component>
-<button *ngIf="!token" class="spotify-login-button" (click)="login()">Log in with Spotify</button>
+
+<div *ngIf="!token" class="title-box">
+    <img class="catjam" src="assets/catjam.gif">
+    <h4 class="subtitle">Log-in through spotify. Don't worry. It's safe!</h4>
+    <button class="spotify-login-button" (click)="login()">Log in with Spotify</button>
+</div>
+
+
+
+
 <div [@fadeInSlideRightComponent]>
     <app-last-tracks-component [tracks$]="tracks$"></app-last-tracks-component>
 </div>
 <div [@fadeInSlideLeftComponent]>
+<div *ngIf="token" class="title-box">
+    <h3 class="title">Check out your favorites!</h3>
+    <h4 class="subtitle">Artists and tunes you've been keeping on repeat!</h4>
+</div>
 <div *ngIf="token" class="tabs top-tabs">
     <button class="tab" (click)="mode = 'artists'" [class.active]="mode === 'artists'">Artists</button>
     <button class="tab" (click)="mode = 'albums'" [class.active]="mode === 'albums'">Albums</button>
     <button class="tab" (click)="mode = 'songs'" [class.active]="mode === 'songs'">Tracks</button>
 </div>
-
 <app-top-things-component #topThings [mode]="mode" [term]="term"></app-top-things-component>
 
 <div *ngIf="token" class="tabs bottom-tabs">
@@ -20,4 +32,8 @@
     <button class="tab" (click)="handleDurationSwitch(2)" [class.active]="term === 2">All
         Time</button>
 </div>
+</div>
+<div *ngIf="token" class="title-box">
+    <h3 class="title">What about the genres?</h3>
+    <h4 class="subtitle">Let's see what music is your go-to.</h4>
 </div>

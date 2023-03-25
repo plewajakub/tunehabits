@@ -12,7 +12,9 @@
 .spotify-login-button:hover {
     background-color: #191414;
 }
-
+.catjam {
+    max-width: 300px;
+}
 .container {
     max-width: 800px;
     background-color: #191414;
@@ -54,4 +56,41 @@
 
 .hidden {
     display: none;
+}
+
+.title-box {
+    font-family: Gotham, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 0px;
+    color: white
+}
+
+.subtitle {
+    font-size: 16px;
+    font-weight: normal;
+    color: #999;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 20px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+    }
 }
