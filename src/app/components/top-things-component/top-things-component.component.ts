@@ -29,7 +29,6 @@ export class TopThingsComponentComponent implements OnInit {
         this.term = this.term;
         break;
     }
-    console.log(this.topThingsData, this.currentData)
   }
   get mode(): string {
     return this._mode;

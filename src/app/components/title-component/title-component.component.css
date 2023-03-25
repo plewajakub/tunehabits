@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 800px;
+    max-width: 800px;
     margin: 0 auto;
     background-color: #191414;
     box-sizing: border-box;

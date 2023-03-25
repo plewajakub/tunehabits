@@ -7,6 +7,8 @@ import { LastTracksComponentComponent } from './components/last-tracks-component
 import { TopThingsComponentComponent } from './components/top-things-component/top-things-component.component';
 import { TitleComponentComponent } from './components/title-component/title-component.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ChartModule } from 'primeng/chart';
+import { ChartComponent } from './components/chart/chart.component';
 
 
 @NgModule({
@@ -14,13 +16,15 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     LastTracksComponentComponent,
     TopThingsComponentComponent,
-    TitleComponentComponent
+    TitleComponentComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
