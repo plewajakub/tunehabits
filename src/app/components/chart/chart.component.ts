@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {chart}
 
 @Component({
   selector: 'app-chart',

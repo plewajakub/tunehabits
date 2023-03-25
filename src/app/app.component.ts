@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SpotifyService } from './services/spotify-service.service';
 import { fadeInSlideRightAnimation, fadeInSlideLeftAnimation } from './components/animations';
@@ -12,7 +12,6 @@ import { TopThingsComponentComponent } from './components/top-things-component/t
   animations : [fadeInSlideRightAnimation, fadeInSlideLeftAnimation]
 })
 export class AppComponent implements OnInit{
-  @ViewChild('topThings', {static: true}) topThings!: TopThingsComponentComponent
   tracks$!: Observable<any[]>;
 
   term = 0;
