@@ -35,16 +35,16 @@ export class SpotifyService {
       );
   }
 
-   getUserTopArtists(): Observable<any[]> {
+   getUserTopArtists(limit:number): Observable<any[]> {
     const durationTerms = ['short_term', 'medium_term', 'long_term'];
-    const observables = durationTerms.map(term => this.spotifyApi.getMyTopArtists({ limit: 9, time_range: term }));
+    const observables = durationTerms.map(term => this.spotifyApi.getMyTopArtists({ limit: limit, time_range: term }));
     return forkJoin(observables);
   }
 
 
-  getUserTopTracks(): Observable<any> {
+  getUserTopTracks(limit:number): Observable<any> {
     const durationTerms = ['short_term', 'medium_term', 'long_term'];
-    const observables = durationTerms.map(term => this.spotifyApi.getMyTopTracks({ limit: 9, time_range: term }));
+    const observables = durationTerms.map(term => this.spotifyApi.getMyTopTracks({ limit: limit, time_range: term }));
     return forkJoin(observables);
   }
 

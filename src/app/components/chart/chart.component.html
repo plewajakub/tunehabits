@@ -1,5 +1,5 @@
-<div class="chart-wrapper">
-<p-chart type="pie" [data]="data" [options]="options"></p-chart>
-<p-chart type="pie" [data]="data" [options]="options"></p-chart>
-<p-chart type="pie" [data]="data" [options]="options"></p-chart>
+<div *ngIf="ready" class="chart-wrapper">
+        <p-chart type="pie" [data]="chartData[0]" [options]="optionTable[0]"></p-chart>
+        <p-chart type="pie" [data]="chartData[1]" [options]="optionTable[1]"></p-chart>
+        <p-chart type="pie" [data]="chartData[2]" [options]="optionTable[2]"></p-chart>
 </div>

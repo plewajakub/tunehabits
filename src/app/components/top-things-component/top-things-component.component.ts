@@ -50,8 +50,8 @@ export class TopThingsComponentComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.spotifyService.getUserTopArtists().subscribe((data)=>{this.artistsData = data; this.currentData = this.artistsData; this.topThingsData = this.currentData[this.term]; this.ready = true; console.log(this.artistsData)})
-    this.spotifyService.getUserTopTracks().subscribe((data:any)=>{this.tracksData = data;})
+    this.spotifyService.getUserTopArtists(9).subscribe((data)=>{this.artistsData = data; this.currentData = this.artistsData; this.topThingsData = this.currentData[this.term]; this.ready = true;})
+    this.spotifyService.getUserTopTracks(9).subscribe((data:any)=>{this.tracksData = data;})
   }
 
 }
