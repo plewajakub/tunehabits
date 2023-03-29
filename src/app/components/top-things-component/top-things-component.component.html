@@ -1,21 +1,24 @@
 <div *ngIf="mode=='artists' && ready==true" class="grid-container">
     <div *ngFor="let thing of topThingsData.items" class="grid-item">
+    <a [href]="thing.external_urls.spotify">
         <img [src]="thing.images[0].url" alt="{{ thing.name }}" class="grid-item-image">
         <div class="grid-item-caption">{{ thing.name }}</div>
+    </a>
     </div>
 </div>
-
 <div *ngIf="mode=='songs' && ready==true" class="grid-container">
     <div *ngFor="let thing of topThingsData.items" class="grid-item">
+    <a [href]="thing.external_urls.spotify">
         <img [src]="thing.album.images[0].url" alt="{{ thing.name }}" class="grid-item-image">
         <div class="grid-item-caption">{{ thing.name }}</div>
+    </a>
     </div>
 </div>
-
 <div *ngIf="mode=='albums' && ready==true" class="grid-container">
     <div *ngFor="let thing of topThingsData.items" class="grid-item">
+        <a [href]="thing.album.external_urls.spotify">
         <img [src]="thing.album.images[0].url" alt="{{ thing.album.name }}" class="grid-item-image">
         <div class="grid-item-caption">{{ thing.album.name }}</div>
+        </a>
     </div>
 </div>
-

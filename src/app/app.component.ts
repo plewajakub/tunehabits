@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { SpotifyService } from './services/spotify-service.service';
 import { fadeInSlideRightAnimation, fadeInSlideLeftAnimation } from './components/animations';
 import { TopThingsComponentComponent } from './components/top-things-component/top-things-component.component';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,15 +18,20 @@ export class AppComponent implements OnInit{
   term = 0;
   mode = "artists"
   token!: string | null
-  constructor(private spotifyService: SpotifyService) {}
+  constructor(private spotifyService: SpotifyService, public router: Router) {}
   login(): void {
-      this.token = this.getTokenFromUrl();
+      this.token = localStorage.getItem('token');
       if (this.token) {
         this.spotifyService.setAccessToken(this.token);
         this.tracks$ = this.spotifyService.getRecentlyPlayed();
       } else {
         this.spotifyService.login();
       }
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    window.location.reload();
   }
 
   handleDurationSwitch(term: number): void {
@@ -43,7 +49,7 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.token = this.getTokenFromUrl();
+    this.token = localStorage.getItem('token');
     if(this.token) {
       this.spotifyService.setAccessToken(this.token);
       this.tracks$ = this.spotifyService.getRecentlyPlayed();

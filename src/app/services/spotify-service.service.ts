@@ -17,7 +17,7 @@ export class SpotifyService {
   login(): void {
     const scopes = ['user-read-recently-played', 'user-top-read'];
     const clientId = '3062dd999226449289bb4f0963b37e1a';
-    const redirectUrl = 'http://localhost:4200/';
+    const redirectUrl = 'http://localhost:4200/callback';
 
     const url = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(redirectUrl)}&scope=${encodeURIComponent(scopes.join(' '))}`;
 

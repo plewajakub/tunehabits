@@ -20,7 +20,7 @@
     background-color: #191414;
     padding: 20px;
     margin: auto;
-    font-family: Gotham, sans-serif;
+    font-family: Montserrat, sans-serif;
 }
 
 .tabs {
@@ -59,7 +59,7 @@
 }
 
 .title-box {
-    font-family: Gotham, sans-serif;
+    font-family: Montserrat, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;

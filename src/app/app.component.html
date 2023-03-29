@@ -1,3 +1,4 @@
+<router-outlet *ngIf="router.isActive('/callback', true)"></router-outlet>
 <app-title-component></app-title-component>
 
 <div *ngIf="!token" class="title-box">
@@ -5,9 +6,6 @@
     <h4 class="subtitle">Log-in through spotify. Don't worry. It's safe!</h4>
     <button class="spotify-login-button" (click)="login()">Log in with Spotify</button>
 </div>
-
-
-
 
 <div [@fadeInSlideRightComponent]>
     <app-last-tracks-component [tracks$]="tracks$"></app-last-tracks-component>
@@ -22,7 +20,7 @@
     <button class="tab" (click)="mode = 'albums'" [class.active]="mode === 'albums'">Albums</button>
     <button class="tab" (click)="mode = 'songs'" [class.active]="mode === 'songs'">Tracks</button>
 </div>
-<app-top-things-component #topThings [mode]="mode" [term]="term"></app-top-things-component>
+<app-top-things-component *ngIf="token" #topThings [mode]="mode" [term]="term"></app-top-things-component>
 
 <div *ngIf="token" class="tabs bottom-tabs">
     <button class="tab" (click)="handleDurationSwitch(0)" [class.active]="term === 0">30
@@ -38,3 +36,7 @@
     <h4 class="subtitle">Let's see what music is your go-to.</h4>
 </div>
 <app-chart *ngIf="token"></app-chart>
+<hr>
+<div class="title-box">
+    <button class="spotify-login-button" *ngIf="token" (click)="logout()">Log Out</button>
+</div>

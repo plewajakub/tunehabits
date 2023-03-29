@@ -9,6 +9,8 @@ import { TitleComponentComponent } from './components/title-component/title-comp
 import { HttpClientModule } from '@angular/common/http';
 import { ChartModule } from 'primeng/chart';
 import { ChartComponent } from './components/chart/chart.component';
+import { CallbackComponent } from './components/callback/callback.component';
+
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { ChartComponent } from './components/chart/chart.component';
     LastTracksComponentComponent,
     TopThingsComponentComponent,
     TitleComponentComponent,
-    ChartComponent
+    ChartComponent,
+    CallbackComponent,
   ],
   imports: [
     BrowserModule,

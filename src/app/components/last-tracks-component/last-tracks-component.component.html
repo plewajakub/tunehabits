@@ -4,11 +4,15 @@
         <li class="last-track-item" *ngFor="let track of tracks">
             <div class="last-track-details">
                 <div class="last-track-thumbnail">
+                    <a [href]="track.track.external_urls.spotify">
                     <img src="{{ track.track.album.images[2].url }}" alt="Album Thumbnail">
+                    </a>
                 </div>
                 <div class="last-track-info">
+                    <a [href]="track.track.external_urls.spotify">
                     <h4 class="last-track-title">{{ track.track.name }}</h4>
                     <p class="last-track-artist">{{ track.track.artists[0].name }}</p>
+                    </a>
                 </div>
             </div>
             <div class="last-track-play">
