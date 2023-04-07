@@ -36,7 +36,8 @@
     <h4 class="subtitle">Let's see what music is your go-to.</h4>
 </div>
 <app-chart *ngIf="token"></app-chart>
-<hr>
-<div class="title-box">
-    <button class="spotify-login-button" *ngIf="token" (click)="logout()">Log Out</button>
+<hr *ngIf="token">
+<div *ngIf="token" class="title-box">
+    
+    <button class="spotify-login-button" (click)="logout()">Log Out</button>
 </div>
