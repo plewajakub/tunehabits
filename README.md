@@ -1,27 +1,33 @@
-# Tunehabits
+# TuneHabits
+TuneHabits is a web application for tracking your Spotify listening habits.. It gives you a nice overlay on your listening data provided by Spotify.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
+https://user-images.githubusercontent.com/70707081/230523050-f9bb75b4-6a09-4288-bb7a-eb0cf711164d.mp4
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Features
+TuneHabits has the following features:
 
-## Code scaffolding
+- **Last song tracking**: You can see the last 5 songs you've played on Spotify and click on them to be redirected directly to their respective Spotify page.
+- **Top Things**: TuneHabits allows you to see your most popular artists, albums and songs over time. You can choose from last 30 days, last 6 months and even look at the all-time data!
+- **Charts**: TuneHabits allows you to see a graphical representation of music genres that appear the most in your Spotify history. Again, data over multiple time periods.
+- **User authentication**: Authentication through Spotify is safe using OAuth 2.0. No data of yours is stored on the server, TuneHabits is purely a front-end application and relies only on Spotify API.
+- **Responsive design**: The application is designed to be responsive and work well on desktop and mobile devices.
+## Technologies
+TuneHabits is a front-end Angular application. It uses the following technologies:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular**: a popular TypeScript framework for building web applications
+- **RxJS**: a library for reactive programming with observables
 
-## Build
+## Getting started
+To run the application locally, you need to have Node.js and Angular CLI installed. Then, follow these steps:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Clone this repository: git clone https://github.com/plewajakub/tunehabits.git
+Navigate to the project directory: cd tunehabits
+Install the dependencies: npm install
+Run the application: ng serve
+Open your web browser and go to http://localhost:4200/
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**Made by Jakub Plewa, @plewajakub**
